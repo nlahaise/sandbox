@@ -9,10 +9,6 @@ function FetchUsingHooks() {
   const [config, setConfig] = useState({
     baseURL: 'https://randomuser.me/api/',
     method: 'get',
-    auth: {
-      username: 'citylifeadmin',
-      password: 'f0rm3rlyGTF'
-    },
     params: {
       gender: 'female',
       results: '50'
