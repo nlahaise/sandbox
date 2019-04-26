@@ -70,3 +70,4 @@ function FetchUsingHooks() {
 }
 
 export default FetchUsingHooks;
+
