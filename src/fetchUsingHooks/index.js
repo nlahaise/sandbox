@@ -4,14 +4,14 @@ import { useDataApi } from './hooks/useDataApi';
 import './rippleLoader.css';
 
 function FetchUsingHooks() {
-  const [query, setQuery] = useState('female');
-  const [qty, setQty] = useState('50');
+  const [query, setQuery] = useState('male');
+  const [qty, setQty] = useState('100');
   const [config, setConfig] = useState({
     baseURL: 'https://randomuser.me/api/',
     method: 'get',
     params: {
-      gender: 'female',
-      results: '50'
+      gender: 'male',
+      results: '100'
     }
   });
 
@@ -41,12 +41,10 @@ function FetchUsingHooks() {
           event.preventDefault();
         }}
       >
-        <input
-          type="text"
-          value={query}
-          //onChange={event => setQuery(event.target.value)}
-          onChange={handleChange}
-        />
+        <select onChange={handleChange}>
+          <option value="male" selected={query === "male" ? true : false}>Male</option>
+          <option value="female" selected={query === "female" ? true : false}>female</option>
+        </select>       
         <input type="text" value={qty} onChange={handleQtyChange} />
         <button type="submit">Search</button>
       </form>
@@ -62,7 +60,6 @@ function FetchUsingHooks() {
           {data.results.map((item, index) => (
             <img src={item.picture.large} key={index} alt={item.name.first} />
           ))}
-          ;
         </div>
       )}
     </Fragment>
