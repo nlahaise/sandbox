@@ -1,7 +1,8 @@
 import React from 'react';
-import FetchUsingHooks from './fetchUsingHooks';
+// import FetchUsingHooks from './fetchUsingHooks';
+import Pixabay from './fetchUsingHooks/Pixabay';
 
 function App() {
-  return <FetchUsingHooks />;
+  return <Pixabay />;
 }
 export default App;
